@@ -7,6 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Fertillizer</title>
         <link rel="stylesheet" href="asset/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     </head>
 
     <body>
@@ -24,32 +25,44 @@
                 <li><a href="login.html">Login</a></li>
             </ul>
         </div>
-        <section id="two" class="wrapper style2 special">
-            <div class="container">
-                <header class="major">
-                    <h2>Fusce ultrices fringilla</h2>
-                    <p>Maecenas vitae tellus feugiat eleifend</p>
-                </header>
-                <div class="row 150%">
-                    <div class="6u 12u$(xsmall)">
-                        <div class="image fit captioned">
-                            <img src="images/pic02.jpg" alt="" />
-                            <h3>Lorem ipsum dolor sit amet.</h3>
-                        </div>
-                    </div>
-                    <div class="6u$ 12u$(xsmall)">
-                        <div class="image fit captioned">
-                            <img src="images/pic03.jpg" alt="" />
-                            <h3>Illum, maiores tempora cupid?</h3>
-                        </div>
-                    </div>
+        <div class="body"></div>
+        <div class="grad"></div>
+        <br>
+        <div class="page">
+            <img src="img/4.jpg" style="display: none;" alt="">
+            <h2 style="padding-top: 170px;">Register</h2>
+
+            <form action="login.html" name="form" method="post" onsubmit="return validateForm();">
+                <div class="imgcontainer">
+                    <img src="./img/avatar.jpg" class="avatar">
                 </div>
-                <ul class="actions">
-                    <li><a href="#" class="button special big">Nulla luctus</a></li>
-                    <li><a href="#" class="button big">Sed vulputate</a></li>
-                </ul>
-            </div>
-        </section>
+
+                <div class="container">
+                    <label for="uname"><b>Username</b></label>
+                    <input type="text" placeholder="Enter Username" name="username">
+
+                    <label for="password"><b>Password</b></label>
+                    <input type="password" id="password" placeholder="Enter Password" name="password"
+                        onkeyup='check();'>
+
+                    <label for="confirm_password"><b>Re-type Password</b></label>
+                    <input type="password" id="confirm_password" placeholder="Enter Password" name="confirm_password"
+                        onkeyup='check();'>
+                    <span id='message'></span>
+
+                    <button type="submit">Register</button>
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember"> Remember me
+                    </label>
+                </div>
+
+                <div class="container">
+                    <button type="button" class="cancelbtn">Cancel</button>
+                    <span class="psw">Forgot <a href="#">password?</a></span>
+                </div>
+            </form>
+        </div>
+
         <footer class="footer">
             <div class="footer__addr">
                 <a href="">
@@ -134,6 +147,43 @@
                     navbar.className = "navbar" + " scrolled";
                 } else {
                     navbar.className = navbar.className.replace("scrolled", "");
+                }
+            }
+
+            var check = function () {
+                if (document.getElementById('password').value ==
+                    document.getElementById('confirm_password').value) {
+                    document.getElementById('message').style.color = 'green';
+                    document.getElementById('message').innerHTML = 'matching';
+                } else {
+                    document.getElementById('message').style.color = 'red';
+                    document.getElementById('message').innerHTML = 'not matching';
+                    return false;
+                }
+            }
+
+            function validateForm() {
+                var x = document.forms["form"]["username"].value;
+                var y = document.forms["form"]["password"].value;
+
+                if (x == "") {
+                    alert("Username Kosong Bos Mohon diisi");
+                    return false;
+                }
+
+                if (x.length < 6) {
+                    alert("Username Harus Lebih dari 6 karakter");
+                    return false;
+                }
+
+                if (y == "") {
+                    alert("Password Kosong Bos Mohon diisi");
+                    return false;
+                }
+
+                if (y.length < 6) {
+                    alert("Password Harus Lebih dari 6 karakter");
+                    return false;
                 }
             }
         </script>
