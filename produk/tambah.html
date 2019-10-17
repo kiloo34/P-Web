@@ -27,16 +27,16 @@
         <div class="w3-display-container w3-animate-opacity">
             <img src="../img/images-3.jpeg" alt="boat" style="width:100%;min-height:350px;max-height:600px;">
         </div>
-        <form action="action_page.php">
+        <form action="action_page.php" name="form" onsubmit="return validateForm()">
             <div class="container">
                 <h1>Tambah Produk</h1>
                 <p>Isi Jika ingin menambahkan produk</p>
                 <hr>
                 <label for="email"><b>Nama</b></label>
-                <input type="text" placeholder="Enter nama" name="email" required>
+                <input type="text" placeholder="Enter nama" name="nama">
 
                 <label for="psw"><b>Harga</b></label>
-                <input type="text" placeholder="Enter Harga" name="harga" required>
+                <input type="text" placeholder="Enter Harga" name="harga">
 
                 <label for="deskripsi"><b>Deskripsi</b></label>
                 <textarea name="deskripsi" id="" rows="10"></textarea>
@@ -104,6 +104,51 @@
                 navbar.className = "navbar" + " scrolled";
             } else {
                 navbar.className = navbar.className.replace("scrolled", "");
+            }
+        }
+
+        function validateForm() {
+            var x = document.forms["form"]["nama"].value;
+            var y = document.forms["form"]["harga"].value;
+            var a = document.forms["form"]["deskripsi"].value;
+            var b = document.forms["form"]["sifat"].value;
+
+            if (x == "") {
+                alert("Nama Kosong Bos Mohon diisi");
+                return false;
+            }
+
+            if (x.length < 6) {
+                alert("Nama Harus Lebih dari 6 karakter");
+                return false;
+            }
+
+            if (y == " ") {
+                alert("Harga Kosong Bos Mohon diisi");
+                return false;
+            }
+
+            if (!y.match(/^\d+/)) {
+                alert("Masukin yang bener, Masa harga ngga angka")
+            }
+
+            if (a == "") {
+                alert("Deskripsi Kosong Bos Mohon diisi");
+                return false;
+            }
+
+            if (a.length < 20) {
+                alert("Deskripsi Harus Lebih dari 6 karakter");
+                return false;
+            }
+
+            if (b == "") {
+                alert("Sifat Kosong Bos Mohon diisi");
+                return false;
+            }
+            if (b.length < 20) {
+                alert("Sifat Harus Lebih dari 6 karakter");
+                return false;
             }
         }
     </script>
