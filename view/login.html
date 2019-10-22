@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Fertillizer</title>
+        <link rel="stylesheet" href="../asset/style.css">
+        <script src="../asset/js/script.js"></script>
+        <script src="../asset/js/validasi.js"></script>
+    </head>
+
+    <body>
+        <div class="navbar menu" id="navbar">
+            <a href="./dashboard.html">
+                <img src="../img/icon2.png" class="logo" alt="">
+            </a>
+            <input class="menu-btn" type="checkbox" id="menu-btn" />
+            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+            <ul class="menu">
+                <li><a href="./dashboard.html">Beranda</a></li>
+                <li><a href="./about.html">About</a></li>
+                <li><a href="#careers">Shop</a></li>
+                <li><a href="./produk/index.html">Produk</a></li>
+                <li><a href="./register.html">Register</a></li>
+            </ul>
+        </div>
+        <div class="body"></div>
+        <div class="grad"></div>
+        <br>
+        <div class="page">
+            <img src="../img/4.jpg" style="display: none;" alt="">
+
+            <h2 style="padding-top: 170px;">Login</h2>
+
+            <form action="dashboardLogin.html" name="form" method="post" onsubmit="return validateForm();">
+                <div class=" imgcontainer">
+                    <img src="../img/avatar.jpg" class="avatar">
+                </div>
+
+                <div class="container center">
+                    <label for="uname" style="margin-bottom: 50px;"><b>Username</b></label><br>
+                    <input type="text" id="username" placeholder="Enter Username" name="username" style="width: 30%;">
+                    <br>
+                    <span id='message'></span>
+
+                    <label for="psw" style="margin-bottom: 50px;"><b>Password</b></label><br>
+                    <input type="password" id="password" placeholder="Enter Password" name="password"
+                        style="width: 30%;"> <br>
+                    <span id='message'></span>
+
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember"> Remember me
+                    </label><br>
+                    <button type="submit">Login</button>
+                </div>
+            </form>
+        </div>
+        <footer class="footer">
+            <div class="footer__addr">
+                <a href="./dashboard.html"><img src="../img/icon.png" style="width: 300px;" alt=""></a>
+                <h2>Contact</h2>
+                <address>
+                    ini alamat<br>
+                    <a class="footer__btn" href="fertillizer:example@gmail.com">Email Us</a>
+                </address>
+            </div>
+
+            <ul class="footer__nav">
+                <li class="nav__item">
+                    <h2 class="nav__title">Produk</h2>
+                    <ul class="nav__ul">
+                        <li><a href="#">Organic</a></li>
+                        <li><a href="#">Pestisida</a></li>
+                        <li><a href="#">Pupuk</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav__item nav__item--extra">
+                    <h2 class="nav__title">Technology</h2>
+                    <ul class="nav__ul nav__ul--extra">
+                        <li><a href="#">Hardware Design</a></li>
+                        <li><a href="#">Software Design</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav__item">
+                    <h2 class="nav__title">Legal</h2>
+                    <ul class="nav__ul">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="legal">
+                <p>&copy; 2019 Fertillizer. All rights reserved.</p>
+
+                <div class="legal__links">
+                    <span>Made with <span class="heart">♥</span></span>
+                </div>
+            </div>
+        </footer>
+    </body>
+
+</html>
