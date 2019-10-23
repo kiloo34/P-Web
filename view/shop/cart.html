@@ -5,9 +5,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Fertillizer || Produk</title>
+        <title>Fertillizer || Cart</title>
         <link rel="stylesheet" href="../../asset/style.css">
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
         <script src="../../asset/js/script.js"></script>
+        <script src="../../asset/js/cart.js"></script>
     </head>
 
     <body>
@@ -18,21 +20,153 @@
             <input class="menu-btn" type="checkbox" id="menu-btn" />
             <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
             <ul class="menu">
-                <li><a href="../dashboard.html">Beranda</a></li>
+                <li><a href="../dashboardLogin.html">Beranda</a></li>
                 <li><a href="../about.html">About</a></li>
                 <li><a href="#">Shop</a></li>
-                <li><a href="../produk/index.html">Produk</a></li>
-                <li><a href="../login.html">Login</a></li>
+                <li><a href="../produk/indexLogin.html">Produk</a></li>
+                <li><a href="./cart.html">Cart</a></li>
+                <li><a href="../login.html">Log Out</a></li>
             </ul>
         </div>
         <div class="w3-display-container w3-animate-opacity">
             <img src="../../img/images-3.jpeg" alt="boat" style="width:100%;min-height:350px;max-height:600px;">
         </div>
         <div class="container">
-            <main class="grid">
+            <div class="text">
+                <h3>Keranjang Belanja</h3>
+            </div>
 
-            </main>
+            <section id="cart">
+                <article class="product">
+                    <header>
+                        <a class="remove">
+                            <img src="../../img/2.jpg" alt="">
+
+                            <h3>Remove product</h3>
+                        </a>
+                    </header>
+
+                    <div class="content">
+
+                        <h1>Pupuk Kompos</h1>
+
+                        <p>oleh <a href="https://teespring.com/stores/dog-lover-graphic-design">KRPL Melati</a></p>
+                        <p>Material: 4.3 oz., 12 colors are 100% combed ringspun cotton. Machine Wash Cold, Tumble
+                            Dry
+                            *satuan Kg</p>
+
+                    </div>
+
+                    <footer class="content">
+                        <span class="qt-minus">-</span>
+                        <span class="qt">25</span>
+                        <span class="qt-plus">+</span>
+
+                        <h2 class="full-price">
+                            187500
+                        </h2>
+
+                        <h2 class="price">
+                            7500
+                        </h2>
+                    </footer>
+                </article>
+            </section>
+
+            <section id="cart">
+                <article class="product">
+                    <header>
+                        <a class="remove">
+                            <img src="../../img/2.jpg" alt="">
+
+                            <h3>Remove product</h3>
+                        </a>
+                    </header>
+
+                    <div class="content">
+
+                        <h1>Pupuk Cair</h1>
+
+                        <p>oleh <a href="https://teespring.com/stores/dog-lover-graphic-design">KRPL Melati</a></p>
+                        <p>Material: 4.3 oz., 12 colors are 100% combed ringspun cotton. Machine Wash Cold, Tumble
+                            Dry
+                            Low. Sizing offered: XS - 3XL</p>
+
+                    </div>
+
+                    <footer class="content">
+                        <span class="qt-minus">-</span>
+                        <span class="qt">1</span>
+                        <span class="qt-plus">+</span>
+
+                        <h2 class="full-price">
+                            25000
+                        </h2>
+
+                        <h2 class="price">
+                            25000
+                        </h2>
+                    </footer>
+                </article>
+            </section>
+
+            <section id="cart">
+                <article class="product">
+                    <header>
+                        <a class="remove">
+                            <img src="../../img/2.jpg" alt="">
+
+                            <h3>Remove product</h3>
+                        </a>
+                    </header>
+
+                    <div class="content">
+
+                        <h1>Pupuk Bokashi</h1>
+
+                        <p>oleh <a href="https://teespring.com/stores/dog-lover-graphic-design">KRPL Melati</a></p>
+                        <p>Material: 4.3 oz., 12 colors are 100% combed ringspun cotton. Machine Wash Cold, Tumble
+                            Dry
+                            *satuan Kg
+
+                        </p>
+                    </div>
+
+                    <footer class="content">
+                        <span class="qt-minus">-</span>
+                        <span class="qt">25</span>
+                        <span class="qt-plus">+</span>
+
+                        <h2 class="full-price">
+                            250000
+                        </h2>
+
+                        <h2 class="price">
+                            10000
+                        </h2>
+                    </footer>
+                </article>
+            </section>
+
         </div>
+
+        <footer id="site-footer">
+            <div class="container clearfix">
+
+                <div class="left">
+                    <h2 class="subtotal">Subtotal: <span>150200</span>,00</h2>
+                    <h3 class="tax">Taxes (5%): <span>20000</span>,00</h3>
+                    <h3 class="shipping">Shipping: <span>25000</span>,00</h3>
+                </div>
+
+                <div class="right">
+                    <h1 class="total">Total: <span>510625</span>,00</h1>
+                    <button class="btn">Bayar</button>
+                    <!-- <a href="#" class="btn">Checkout</a> -->
+                </div>
+
+            </div>
+        </footer>
         <footer class="footer">
             <div class="footer__addr">
                 <a href="../dashboard.html"><img src="../../img/icon.png" style="width: 300px;" alt=""></a>
