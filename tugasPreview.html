@@ -6,46 +6,69 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Ini Tugas Preview</title>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     </head>
 
     <body>
+        <h3>Upload your images</h3>
+        <input type="file" multiple id="gallery-photo-add">
+        <div class="gallery"></div><br>
 
-        <p><label for="file" style="cursor: pointer;">Upload File</label></p>
-        <!-- <input type="file" id="myFile" multiple size="50" onchange="myFunction()"> -->
-        <input type="file" name="file" id="file" onchange="bukaFile(event)">
+        <form method="post" action="" id="myForm">
+            <input type="text" value=" " />
+            <input type="text" value=" " />
+            <input type="text" value=" " />
+            <input type="text" value=" " />
+            <input type="submit" value="Send" id="submit" />
+        </form>
 
         <img id="output" width="200" />
         <p id="demo"></p>
 
         <script>
-            var bukaFile = function myFunction() {
-                var reader = new FileReader();
-                reader.onload = function () {
-                    var output = document.getElementById('output');
-                    output.src = reader.result;
-                };
-                reader.readAsDataURL(event.target.files[0]);
+            $(function () {
+                $("#submit").click(function () {
+                    $("#myForm input[type=text]").each(function () {
+                        if (this.value != " ") {
+                            if (!isNaN(this.value)) {
+                                alert(this.value + " adalah nomor");
+                            } else {
+                                alert(this.value + " bukan nompor tapi string");
+                            }
+                        } else {
+                            alert("field kosong");
+                        }
+                    });
+                    return false;
+                });
+            });
 
-                var x = document.getElementById("file");
-                var txt = "";
-                if ('files' in x) {
-                    if (x.files.length == 0) {
-                        txt = "Select one or more files.";
-                    } else {
-                        for (var i = 0; i < x.files.length; i++) {
-                            txt += "<br><strong>" + (i + 1) + ". file</strong><br>";
-                            var file = x.files[i];
-                            if ('name' in file) {
-                                txt += "name: " + file.name + "<br>";
+            $(function () {
+                // Multiple images preview in browser
+                var imagesPreview = function (input, placeToInsertImagePreview) {
+
+                    if (input.files) {
+                        var filesAmount = input.files.length;
+
+                        for (i = 0; i < filesAmount; i++) {
+                            var reader = new FileReader();
+
+                            reader.onload = function (event) {
+                                $($.parseHTML('<img>')).attr('src', event.target.result).appendTo(
+                                    placeToInsertImagePreview);
                             }
-                            if ('size' in file) {
-                                txt += "size: " + file.size + " bytes <br>";
-                            }
+
+                            reader.readAsDataURL(input.files[i]);
                         }
                     }
-                }
-                document.getElementById("demo").innerHTML = txt;
-            };
+
+                };
+
+                $('#gallery-photo-add').on('change', function () {
+                    imagesPreview(this, 'div.gallery');
+                });
+            });
         </script>
 
 </html>
