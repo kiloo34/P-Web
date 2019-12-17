@@ -8,7 +8,6 @@
         <title>Fertillizer</title>
         <link rel="stylesheet" href="../asset/style.css">
         <script src="../asset/js/script.js"></script>
-        <script src="../asset/js/validasi.js"></script>
     </head>
 
     <body>
@@ -19,64 +18,40 @@
             <input class="menu-btn" type="checkbox" id="menu-btn" />
             <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
             <ul class="menu">
-                <li><a href="./dashboard.html">Beranda</a></li>
-                <li><a href="./about.html">About</a></li>
-                <li><a href="#careers">Shop</a></li>
-                <li><a href="./produk/index.html">Produk</a></li>
-                <li><a href="./register.html">Register</a></li>
+                <li><a href="./dashboardlogin.html">Beranda</a></li>
+                <li><a href="./aboutlogin.html">About</a></li>
+                <li><a href="./shop/indexLogin.html">Shop</a></li>
+                <li><a href="./produk/indexLogin.html">Produk</a></li>
+                <li><a href="./shop/cart.html">Cart</a></li>
+                <li><a href="./login.html">Log Out</a></li>ß
             </ul>
         </div>
-        <div class="body"></div>
-        <div class="grad"></div>
-        <br>
-        <div class="page">
-            <img src="../img/4.jpg" style="display: none;" alt="">
 
-            <h2 style="padding-top: 170px;">Login</h2>
-
-            <form action="dashboardLogin.html" name="form" method="post" onsubmit="return validateForm();">
-                <div class=" imgcontainer">
-                    <img src="../img/avatar.jpg" class="avatar">
-                </div>
-
-                <div class="container center">
-                    <label for="uname" style="margin-bottom: 50px;"><b>Username</b></label><br>
-                    <input type="text" id="username" placeholder="Enter Username" name="username" style="width: 30%;">
-                    <br>
-                    <span id='message'></span>
-
-                    <label for="psw" style="margin-bottom: 50px;"><b>Password</b></label><br>
-                    <input type="password" id="password" placeholder="Enter Password" name="password"
-                        style="width: 30%;"> <br>
-                    <span id='message'></span>
-
-                    <label>
-                        <input type="checkbox" checked="checked" name="remember"> Remember me
-                    </label><br>
-                    <button type="submit" id="btn_masuk">Login</button>
-                </div>
-            </form>
+        <div class="w3-display-container w3-animate-opacity">
+            <img src="../img/images-3.jpeg" alt="boat" style="width:100%;min-height:350px;max-height:600px;">
         </div>
 
-        <div class="error-modal" id="error_modal">
-            <div class="error-modal-content">
-                <div class="modal-top">
-                    <h3>Peringatan</h3>
+        <div class="container">
+            <img src="../img/images-3.jpeg" alt="" class="img-poss">
+            <article>
+                <div class="text">
+                    <h3>Fertilizer</h3>
+                    <p>oleh <a href="#">KRPL Melati Jember</a></p>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel commodi aut, molestias, assumenda
+                        sequi sapiente tempore, doloribus quo pariatur nostrum velit minima. Consequuntur, perferendis
+                        voluptatem. Voluptatum rem magnam voluptatibus consequatur!</p>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam repellat repellendus ullam
+                        expedita ipsam provident reprehenderit, corrupti a nobis libero, error quisquam, aut tempore
+                        quia velit nostrum aspernatur! Ea, recusandae?</p>
+                    <a href="partner.html" style="text-decoration: none;"><button>Partner
+                            Kami</button></a>
                 </div>
-
-                <div class="modal-middle">
-                    <b></b>
-                </div>
-
-                <div class="modal-bottom">
-                    <button class="btn btn_utama" id="close_error_form">Close</button>
-                </div>
-            </div>
+            </article>
         </div>
 
         <footer class="footer">
             <div class="footer__addr">
-                <a href="./dashboard.html"><img src="../img/icon.png" style="width: 300px;" alt=""></a>
+                <a href="../dashboard.html"><img src="../img/icon.png" style="width: 300px;" alt=""></a>
                 <h2>Contact</h2>
                 <address>
                     ini alamat<br>
@@ -121,8 +96,5 @@
             </div>
         </footer>
     </body>
-    <script type="text/javascript">
-        $("form").validasiLogin();
-    </script>
 
 </html>

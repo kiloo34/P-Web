@@ -7,8 +7,6 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Fertillizer || Produk</title>
         <link rel="stylesheet" href="../../asset/style.css">
-        <script src="../../asset/js/script.js"></script>
-        <script src="../../asset/js/validasi.js"></script>
     </head>
 
     <body>
@@ -29,26 +27,60 @@
         <div class="w3-display-container w3-animate-opacity">
             <img src="../../img/images-3.jpeg" alt="boat" style="width:100%;min-height:350px;max-height:600px;">
         </div>
-        <form action="../produk/indexLogin.html" name="form" onsubmit="return validateFormProduk()">
+        <!-- onsubmit="return validateFormProduk()" -->
+        <form action="../produk/indexLogin.html" name="form">
             <div class="container">
                 <h1>Tambah Produk</h1>
                 <p>Isi Jika ingin menambahkan produk</p>
                 <hr>
+                <label for="email"><b>Gambar</b></label>
+                <input type="file" multiple id="gallery-photo-add" name="image">
+                <div class="gallery"></div><br>
+
                 <label for="email"><b>Nama</b></label>
-                <ßnput type="text" placeholder="Enter nama" name="nama">
+                <input type="text" placeholder="Enter nama" name="nama">
 
-                    <label for="psw"><b>Harga</b></label>
-                    <input type="text" placeholder="Enter Harga" name="harga">
+                <label for="psw"><b>Harga</b></label>
+                <input type="text" placeholder="Enter Harga" name="harga">
 
-                    <label for="deskripsi"><b>Deskripsi</b></label>
-                    <textarea name="deskripsi" id="" rows="10"></textarea>
+                <label for="psw"><b>kategori</b></label>
+                <select name="" id="kategori">
+                    <option value="kimia">Kimia</option>
+                    <option value="organik">Organik</option>
+                </select>
 
-                    <label for="sifat"><b>Sifat</b></label>
-                    <textarea name="sifat" id="" rows="10"></textarea>
-                    <hr>
-                    <button type="submit" class="registerbtn">Tambah</button>
+                <label for="sifat"><b>Sifat</b></label>
+                <select name="" id="sifat">
+                    <option value=""></option>
+                </select>
+
+                <label for="deskripsi"><b>Deskripsi</b></label>
+                <textarea name="deskripsi" id="" rows="10"></textarea>
+
+
+                <hr>
+                <div id="btn_submit">
+                    <button type="submit" class="registerbtn" id="submit_pesan">Tambah</button>
+                </div>
             </div>
         </form>
+
+        <div class="error-modal" id="error_modal">
+            <div class="error-modal-content">
+                <div class="modal-top">
+                    <h3>Peringatan</h3>
+                </div>
+
+                <div class="modal-middle">
+                    <b></b>
+                </div>
+
+                <div class="modal-bottom">
+                    <button class="btn btn_utama" id="close_error_form">Close</button>
+                </div>
+            </div>
+        </div>
+
         <footer class="footer">
             <div class="footer__addr">
                 <a href="../dashboardLogin.html"><img src="../../img/icon.png" style="width: 300px;" alt=""></a>
@@ -94,6 +126,46 @@
                 </div>
             </div>
         </footer>
+
     </body>
+    <script src="../../asset/js/jquery.min.js"></script>
+    <script src="../../asset/js/script.js"></script>
+    <script src="../../asset/js/validasi.js"></script>
+    <script type="text/javascript">
+        $("form").validateEmpty();
+
+        $('#sifat').hide();
+
+        $("#kategori").on('change', function () {
+            const ss = $(this).val();
+            var path = "../../json/tipe.json";
+
+            $.ajax({
+                url: path,
+                type: 'GET',
+                dataType: 'json',
+
+                success: function (data) {
+                    var items = JSON.parse(data);
+                    for (let i = 0; i < items.length; i++) {
+                        const element = array[i];
+
+                    }
+                    console.log('masuk');
+
+                    var gab = "";
+                    $.each(data, function (index, val) {
+                        gabung +=
+                            "<option value='" + val.nama + "'>" + val.nama + "</option>"
+                    })
+                    $('#sifat').append(gab);
+                },
+                error: function (data) {
+                    console.log(data);
+                }
+            });
+            $("#sifat").show();
+        });
+    </script>
 
 </html>
